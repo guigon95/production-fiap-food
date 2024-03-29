@@ -13,8 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaymentConsumer {
 
-    //https://medium.com/@mertcakmak2/aws-standard-sqs-queue-with-spring-boot-974c163e0616
-    
     @Value("${aws.queueName}")
     private String queueName;
 
@@ -38,7 +36,7 @@ public class PaymentConsumer {
             throw new RuntimeException();
         }
 
-        log.info("retornando null");
+        log.info("No messages");
         return null;
     }
 }
