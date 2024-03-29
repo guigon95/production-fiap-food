@@ -12,8 +12,8 @@ on:
   push:
 
 env:
-  ECS_CLUSTER: production-cluster
-  ECR_REPOSITORY: production
+  ECS_CLUSTER: ${{ secrets.APP_NAME }}-cluster
+  ECR_REPOSITORY: ${{ secrets.APP_NAME }}
 
 jobs:
 
@@ -91,12 +91,12 @@ jobs:
 
       - name: Download task definition
         run: |
-          aws ecs describe-task-definition --task-definition fiap-food-task:1 --query taskDefinition > task-definition.json
+          aws ecs describe-task-definition --task-definition ${{ secrets.APP_NAME }}-task:1 --query taskDefinition > task-definition.json
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         env:
-          CONTAINER_NAME: production-task
+          CONTAINER_NAME: ${{ secrets.APP_NAME }}-task
         uses: aws-actions/amazon-ecs-render-task-definition@c804dfbdd57f713b6c079302a4c01db7017a36fc
         with:
           task-definition: task-definition.json
