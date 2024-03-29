@@ -105,7 +105,7 @@ jobs:
 
       - name: Deploy Amazon ECS task definition
         env:
-          ECS_SERVICE: production-service
+          ECS_SERVICE: ${{ secrets.APP_NAME }}-service
         uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
