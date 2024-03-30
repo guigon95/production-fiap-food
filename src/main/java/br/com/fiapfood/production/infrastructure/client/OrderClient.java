@@ -17,15 +17,6 @@ public class OrderClient {
 
     private final RestTemplate restTemplate;
 
-    //private final WebClient webClient;
-
-
-//    public Mono<String> makeAuthenticatedRequest(Long id) {
-//        return webClient.get()
-//                .uri(getUrl+id)
-//                .retrieve()
-//                .bodyToMono(String.class);
-//    }
     public String getOrderById(Long id, String token) {
 
         HttpHeaders headers = new HttpHeaders();
