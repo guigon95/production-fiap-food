@@ -1,8 +1,7 @@
 # production-fiap-food
 
-API responsável por receber os pedidos após o pagamento,
-acompanhar a produção e atualização dos status dos pedidos
-
+API responsible for receiving orders after payment,
+monitoring production and updating order status
 
 ## Prerequisites:
 - Apache Maven 3.+
