@@ -34,6 +34,11 @@ public class ProductionUseCaseImpl implements ProductionUseCase {
         orderProducerGateway.publishMessage(orderId);
     }
 
+    @Override
+    public String findOrder(Long id, String token) {
+        return orderGateway.findById(id, token);
+    }
+
     @Scheduled(fixedDelay = 15000)
     public void consumePaymentMessages() {
         String orderId = paymentConsumerGateway.consumeMessages();

@@ -7,7 +7,7 @@ import java.util.List;
 public interface OrderGateway {
     List<Order> findAll();
 
-    Order findById(String id);
+    String findById(Long id, String token);
 
     Order save(Order order);
 }
