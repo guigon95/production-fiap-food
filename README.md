@@ -38,3 +38,5 @@ Por essas razões, o padrão Saga Coreografado foi a nossa escolha para o Sistem
 ![swagger.png](images%2Fswagger.png)
 
 ## Arquitetura
+
+![Arquitetura.png](images%2FArquitetura.png)
